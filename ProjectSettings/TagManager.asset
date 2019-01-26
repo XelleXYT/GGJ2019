@@ -11,6 +11,8 @@ TagManager:
   - rampa
   - coche
   - caja
+  - enemigo
+  - limitador
   layers:
   - Default
   - TransparentFX

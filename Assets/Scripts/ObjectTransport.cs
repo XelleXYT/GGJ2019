@@ -28,6 +28,15 @@ public class ObjectTransport : MonoBehaviour
             if ((Input.GetKey("s") || Input.GetKey("down") || Input.GetKey("w") || Input.GetKey("up") || Input.GetKey("space")))
             {
                 enganchado = false;
+                player.GetComponent<Animator>().SetBool("pushing", false);
+            }
+            if ((!Input.GetKey("d") && !Input.GetKey("a") && !Input.GetKey("left") && !Input.GetKey("right")))
+            {
+                player.GetComponent<Animator>().SetBool("pushing", false);
+            }
+            else
+            {
+                player.GetComponent<Animator>().SetBool("pushing", true);
             }
         }
     }
@@ -38,6 +47,7 @@ public class ObjectTransport : MonoBehaviour
         {
             enganchado = true;
             player = collision.gameObject;
+            collision.gameObject.GetComponent<Animator>().SetBool("pushing", true);
         }
     }
 }

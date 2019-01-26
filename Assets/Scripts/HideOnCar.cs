@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HideOnCar : MonoBehaviour
 {
-    bool isHidden = false;
+    public  bool isHidden = false;
     bool canHide = false;
     SpriteRenderer sr;
 
@@ -19,7 +19,7 @@ public class HideOnCar : MonoBehaviour
                 {
                     isHidden = true;
                     sr.sortingOrder = 0;
-                    print("oculto");
+                    //print("oculto");
                 }
             }
             else
@@ -28,7 +28,7 @@ public class HideOnCar : MonoBehaviour
                 {
                     isHidden = false;
                     sr.sortingOrder = 2;
-                    print("visible");
+                    //print("visible");
                 }
             }
         }
@@ -49,7 +49,7 @@ public class HideOnCar : MonoBehaviour
             canHide = false;
             isHidden = false;
             sr.sortingOrder = 2;
-            print("visible");
+            //print("visible");
         }
     }
 }
