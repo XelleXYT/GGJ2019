@@ -13,6 +13,7 @@ public class Personaje : MonoBehaviour
     private int agarrado; // 1 izq   2 der
 
     private float alturaCollider;
+    private float anguloRampa;
 
     private bool puedeSaltar;
     private bool tiempoSaltando;
@@ -97,9 +98,15 @@ public class Personaje : MonoBehaviour
                 }
                 else
                 {
-                    rb.AddForce(new Vector2(-(fuerzaMovimiento / 2) * Time.deltaTime,(fuerzaMovimiento * 1.7f) * Time.deltaTime));
+                    if(anguloRampa <= 45 && anguloRampa >= 0)
+                    {
+                        rb.AddForce(new Vector2(-fuerzaMovimiento * Time.deltaTime,0));
+                    }
+                    else
+                    {
+                        rb.AddForce(new Vector2(-(fuerzaMovimiento / 2) * Time.deltaTime,(fuerzaMovimiento * 1.7f) * Time.deltaTime));
+                    }
                 }
-                rb.AddForce(new Vector2(-fuerzaMovimiento * Time.deltaTime,0));
                 gameObject.GetComponent<Animator>().SetBool("moving",true);
                 gameObject.GetComponent<SpriteRenderer>().flipX = true;
             }
@@ -118,7 +125,15 @@ public class Personaje : MonoBehaviour
                 }
                 else
                 {
-                    rb.AddForce(new Vector2((fuerzaMovimiento/2) * Time.deltaTime,(fuerzaMovimiento* 1.7f) * Time.deltaTime));
+                    if(anguloRampa >= -45 && anguloRampa <= 0)
+                    {
+                        rb.AddForce(new Vector2((fuerzaMovimiento / 2) * Time.deltaTime,0));
+                    }
+                    else
+                    {
+                        rb.AddForce(new Vector2((fuerzaMovimiento / 2) * Time.deltaTime,(fuerzaMovimiento * 1.7f) * Time.deltaTime));
+                    }
+
                 }
                 gameObject.GetComponent<Animator>().SetBool("moving",true);
                 gameObject.GetComponent<SpriteRenderer>().flipX = false;
@@ -127,6 +142,18 @@ public class Personaje : MonoBehaviour
         if(!Input.GetKey("d") && !Input.GetKey("right") && !Input.GetKey("a") && !Input.GetKey("left"))
         {
             gameObject.GetComponent<Animator>().SetBool("moving",false);
+            if(rampa)
+            {
+                if(anguloRampa >= -45 && anguloRampa <= 0)
+                {
+                    rb.AddForce(new Vector2(-fuerzaMovimiento * Time.deltaTime, 0));
+                }
+                else
+                {
+                    rb.AddForce(new Vector2(fuerzaMovimiento * Time.deltaTime,0));
+                }
+            }
+
         }
         if((Input.GetKey("w") || Input.GetKey("up") || Input.GetKey("space")) && puedeSaltar && tiempoSaltando)
         {
@@ -149,6 +176,7 @@ public class Personaje : MonoBehaviour
         {
             puedeSaltar = true;
             rampa = true;
+            anguloRampa = collision.transform.rotation.z;
         }
         else if(collision.transform.tag == "agarradera")
         {
