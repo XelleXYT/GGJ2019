@@ -8,6 +8,7 @@ TagManager:
   - plataforma
   - agarradera
   - zoom
+  - coche
   layers:
   - Default
   - TransparentFX
