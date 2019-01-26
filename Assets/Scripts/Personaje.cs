@@ -4,24 +4,56 @@ using UnityEngine;
 
 public class Personaje : MonoBehaviour
 {
-    public float velocidad;
+    public float fuerzaMovimiento;
     public float fuerzaSalto;
+    private bool puedeSaltar;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey("a"))
+        if(Input.GetKey("a") || Input.GetKey("left"))
         {
-            gameObject.transform.Translate(-velocidad * Time.deltaTime,0,0);
+            if(!puedeSaltar)
+            {
+                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-(fuerzaMovimiento / 2) * Time.deltaTime,0));
+            }
+            else
+            {
+                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-fuerzaMovimiento * Time.deltaTime,0));
+            }
         }
-        if(Input.GetKey("d"))
+        if(Input.GetKey("d") || Input.GetKey("right"))
         {
-            gameObject.transform.Translate(velocidad * Time.deltaTime,0,0);
+            if(!puedeSaltar)
+            {
+                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2((fuerzaMovimiento / 2) * Time.deltaTime,0));
+            }
+            else
+            {
+                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(fuerzaMovimiento * Time.deltaTime,0));
+            }
+        }
+        if((Input.GetKey("w") || Input.GetKey("up") || Input.GetKey("space")) && puedeSaltar)
+        {
+            puedeSaltar = false;
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0,fuerzaSalto));
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.transform.tag == "suelo" || collision.transform.tag == "plataforma")
+        {
+            puedeSaltar = true;
+        }
+        if(collision.transform.tag == "agarradera" && !puedeSaltar)
+        {
+           
         }
     }
 }
