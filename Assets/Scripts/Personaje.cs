@@ -91,6 +91,8 @@ public class Personaje : MonoBehaviour
             else
             {
                 rb.AddForce(new Vector2(-fuerzaMovimiento * Time.deltaTime,0));
+                gameObject.GetComponent<Animator>().SetBool("moving", true);
+                gameObject.GetComponent<SpriteRenderer>().flipX = true;
             }
         }
         if(Input.GetKey("d") || Input.GetKey("right"))
@@ -102,7 +104,13 @@ public class Personaje : MonoBehaviour
             else
             {
                 rb.AddForce(new Vector2(fuerzaMovimiento * Time.deltaTime,0));
+                gameObject.GetComponent<Animator>().SetBool("moving",true);
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
             }
+        }
+        if(!Input.GetKey("d") && !Input.GetKey("right") && !Input.GetKey("a") && !Input.GetKey("left"))
+        {
+            gameObject.GetComponent<Animator>().SetBool("moving",false);
         }
         if((Input.GetKey("w") || Input.GetKey("up") || Input.GetKey("space")) && puedeSaltar&&tiempoSaltando)
         {
