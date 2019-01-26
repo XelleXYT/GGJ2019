@@ -17,7 +17,8 @@ public class Personaje : MonoBehaviour
     private bool puedeSaltar;
     private bool tiempoSaltando;
     private bool encajado;
-    
+    private bool rampa;
+
 
     Rigidbody2D rb;
 
@@ -32,7 +33,7 @@ public class Personaje : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(tiempoSaltoAux!=tiempoSalto)
+        if(tiempoSaltoAux != tiempoSalto)
         {
             tiempoSaltoAux += 1;
             tiempoSaltando = false;
@@ -90,8 +91,16 @@ public class Personaje : MonoBehaviour
             }
             else
             {
+                if(!rampa)
+                {
+                    rb.AddForce(new Vector2(-fuerzaMovimiento * Time.deltaTime,0));
+                }
+                else
+                {
+                    rb.AddForce(new Vector2(-(fuerzaMovimiento / 2) * Time.deltaTime,(fuerzaMovimiento * 1.7f) * Time.deltaTime));
+                }
                 rb.AddForce(new Vector2(-fuerzaMovimiento * Time.deltaTime,0));
-                gameObject.GetComponent<Animator>().SetBool("moving", true);
+                gameObject.GetComponent<Animator>().SetBool("moving",true);
                 gameObject.GetComponent<SpriteRenderer>().flipX = true;
             }
         }
@@ -103,7 +112,14 @@ public class Personaje : MonoBehaviour
             }
             else
             {
-                rb.AddForce(new Vector2(fuerzaMovimiento * Time.deltaTime,0));
+                if(!rampa)
+                {
+                    rb.AddForce(new Vector2(fuerzaMovimiento * Time.deltaTime,0));
+                }
+                else
+                {
+                    rb.AddForce(new Vector2((fuerzaMovimiento/2) * Time.deltaTime,(fuerzaMovimiento* 1.7f) * Time.deltaTime));
+                }
                 gameObject.GetComponent<Animator>().SetBool("moving",true);
                 gameObject.GetComponent<SpriteRenderer>().flipX = false;
             }
@@ -112,7 +128,7 @@ public class Personaje : MonoBehaviour
         {
             gameObject.GetComponent<Animator>().SetBool("moving",false);
         }
-        if((Input.GetKey("w") || Input.GetKey("up") || Input.GetKey("space")) && puedeSaltar&&tiempoSaltando)
+        if((Input.GetKey("w") || Input.GetKey("up") || Input.GetKey("space")) && puedeSaltar && tiempoSaltando)
         {
             puedeSaltar = false;
             tiempoSaltando = false;
@@ -124,9 +140,15 @@ public class Personaje : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if((collision.transform.tag == "suelo"))
+        if(collision.transform.tag == "suelo")
         {
             puedeSaltar = true;
+            rampa = false;
+        }
+        if(collision.transform.tag == "rampa")
+        {
+            puedeSaltar = true;
+            rampa = true;
         }
         else if(collision.transform.tag == "agarradera")
         {
@@ -135,7 +157,7 @@ public class Personaje : MonoBehaviour
                 rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
                 agarrado = 1;
             }
-           alturaCollider = collision.transform.position.y;
+            alturaCollider = collision.transform.position.y;
         }
         else if(collision.transform.tag == "plataforma" && collision.transform.position.y + rb.transform.localScale.y < rb.transform.position.y)
         {
@@ -143,5 +165,5 @@ public class Personaje : MonoBehaviour
         }
     }
 
-    
+
 }
