@@ -36,7 +36,10 @@ public class ObjectTransport : MonoBehaviour
             }
             else
             {
-                player.GetComponent<Animator>().SetBool("pushing", true);
+                if (enganchado)
+                {
+                    player.GetComponent<Animator>().SetBool("pushing", true);
+                }
             }
         }
     }
@@ -45,9 +48,12 @@ public class ObjectTransport : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            enganchado = true;
             player = collision.gameObject;
-            collision.gameObject.GetComponent<Animator>().SetBool("pushing", true);
+            if (player.transform.position.y - player.transform.localScale.y /2 < gameObject.transform.position.y)
+            {
+                enganchado = true;
+                //collision.gameObject.GetComponent<Animator>().SetBool("pushing", true);
+            }
         }
     }
 }

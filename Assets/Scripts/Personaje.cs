@@ -172,6 +172,10 @@ public class Personaje : MonoBehaviour
             puedeSaltar = true;
             rampa = false;
         }
+        if(collision.transform.tag == "caja")
+        {
+            puedeSaltar = true;
+        }
         if(collision.transform.tag == "rampa")
         {
             puedeSaltar = true;
