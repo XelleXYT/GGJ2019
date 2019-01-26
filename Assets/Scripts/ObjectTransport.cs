@@ -5,6 +5,7 @@ using UnityEngine;
 public class ObjectTransport : MonoBehaviour
 {
     public float separacionConProta;
+    public float boxSize;
     bool enganchado = false;
     GameObject player;
 
@@ -49,7 +50,7 @@ public class ObjectTransport : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             player = collision.gameObject;
-            if (player.transform.position.y - player.transform.localScale.y /2 < gameObject.transform.position.y)
+            if (player.transform.position.y - player.transform.localScale.y / boxSize < gameObject.transform.position.y)
             {
                 enganchado = true;
                 //collision.gameObject.GetComponent<Animator>().SetBool("pushing", true);
