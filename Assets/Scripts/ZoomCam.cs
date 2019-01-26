@@ -10,30 +10,12 @@ public class ZoomCam : MonoBehaviour
 
     private bool isZoomed = false;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "zoom")
         {
-            /*
-            if (!isZoomed)
-            {
-                Camera.main.orthographicSize = Mathf.Lerp(maxSize, minSize, Time.deltaTime * augmentionSpeed);
-                isZoomed = true;
-            }
-            else
-            {
-                Camera.main.orthographicSize = Mathf.Lerp(minSize, maxSize, Time.deltaTime * augmentionSpeed);
-                isZoomed = false;
-            }
-            */
             StartCoroutine(zoomIn());
-            
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        StartCoroutine(zoomIn());
     }
 
     private IEnumerator zoomIn()
