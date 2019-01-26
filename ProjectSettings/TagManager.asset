@@ -8,6 +8,7 @@ TagManager:
   - plataforma
   - agarradera
   - zoom
+  - rampa
   layers:
   - Default
   - TransparentFX
