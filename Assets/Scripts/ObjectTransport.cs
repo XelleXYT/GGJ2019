@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectTransport : MonoBehaviour
 {
+    public float separacionConProta;
     bool enganchado = false;
     GameObject player;
 
@@ -14,12 +15,12 @@ public class ObjectTransport : MonoBehaviour
         {
             float posX;
             if (player.transform.localPosition.x > gameObject.transform.localPosition.x)
-            {   
-                posX = player.transform.position.x - player.transform.localScale.x / 2 - gameObject.transform.localScale.x / 2;
+            {
+                posX = player.transform.position.x - player.transform.localScale.x / separacionConProta - gameObject.transform.localScale.x / separacionConProta;
             }
             else
             {
-                posX = player.transform.position.x + player.transform.localScale.x / 2 + gameObject.transform.localScale.x / 2;
+                posX = player.transform.position.x + player.transform.localScale.x / separacionConProta + gameObject.transform.localScale.x / separacionConProta;
             }
             float posY = gameObject.transform.position.y;
             gameObject.transform.position = new Vector3(posX, posY, 0);
