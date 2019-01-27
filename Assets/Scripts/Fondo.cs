@@ -19,7 +19,7 @@ public class Fondo : MonoBehaviour
         {
             if(Input.GetKey("d") || Input.GetKey("right"))
             {
-               
+                gameObject.transform.Translate(-movimientoFondo,0,0);
             }
             if(Input.GetKey("a") || Input.GetKey("left"))
             {
