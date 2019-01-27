@@ -166,6 +166,7 @@ public class Personaje : MonoBehaviour
         }
         if((Input.GetKey("w") || Input.GetKey("up") || Input.GetKey("space")) && puedeSaltar && tiempoSaltando)
         {
+            SoundManager.instance.RandomizeSfx(jumpSound1,jumpSound2,jumpSound3);
             puedeSaltar = false;
             tiempoSaltando = false;
             tiempoSaltoAux = 0;
