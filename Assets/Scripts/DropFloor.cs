@@ -10,6 +10,7 @@ public class DropFloor : MonoBehaviour
         {
             gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
             gameObject.AddComponent<Rigidbody2D>();
+            Destroy(gameObject);
         }
     }
 }
