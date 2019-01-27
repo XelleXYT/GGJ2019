@@ -282,12 +282,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<b>Credits</b>\n\n\n<b>Programation</b>\n\nAlejandro Lago S\xE1nchez\nAlejandro
+  m_Text: "<b>Credits</b>\n\n\n<b>Programming</b>\n\nAlejandro Lago S\xE1nchez\nAlejandro
     Luna G\xF3mez\nDaniel Ortiz Vallejo\n\n\n<b>Production</b>\n\nPablo Car\xFAs Muro\n\n\n<b>Narrative
-    Desing</b>\n\nAdrian Herrero Rumayor\n\n\n<b>Art</b>\n\nJuan Barreda G\xF3mez\nI\xF1igo
-    Escandon Fernandez-Cid\nAlejandro Lago Sanchez\nDaniel Ortiz Vallejo\n\n\n<b>Game
-    desing</b>\n\nPablo Car\xFAs Muro\nAdrian Herrero Rumayor\nAlejandro Luna G\xF3mez\nDaniel
-    Ortiz Vallejo\n\n\n<b>Music and audio</b>\n\nI\xF1igo Escand\xF3n Fernandez-Cid\nAlfonso
+    Design</b>\n\nAdri\xE1n Herrero Rumayor\n\n\n<b>Art</b>\n\nJuan Barreda G\xF3mez\n\xCD\xF1igo
+    Escand\xF3n Fern\xE1ndez-Cid\nAlejandro Lago S\xE1nchez\nDaniel Ortiz Vallejo\n\n\n<b>Game
+    Design</b>\n\nPablo Car\xFAs Muro\nAdri\xE1n Herrero Rumayor\nAlejandro Luna G\xF3mez\nDaniel
+    Ortiz Vallejo\n\n\n<b>Music and FX</b>\n\n\xCD\xF1igo Escand\xF3n Fern\xE1ndez-Cid\nAlfonso
     Torrego Ruano\n\n\n\n\n\n\n\n\n\n\t  <b>THE END</b>"
 --- !u!222 &765521794
 CanvasRenderer:
