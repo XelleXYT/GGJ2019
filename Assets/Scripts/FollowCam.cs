@@ -14,18 +14,18 @@ public class FollowCam : MonoBehaviour
     private void LateUpdate()
     {
         float x = Mathf.Clamp(player.transform.position.x, minX, maxX);
-        float y = Mathf.Clamp(player.transform.position.y, minY, maxY);
+        float y = player.transform.position.y;
 
-        if (player.transform.position.x > gameObject.transform.position.x + 5)
+        if (player.transform.position.x > gameObject.transform.position.x + zoom)
         {
-            gameObject.transform.position = new Vector3(x - 5, y, gameObject.transform.position.z);
+            gameObject.transform.position = new Vector3(x - zoom, y, gameObject.transform.position.z);
         }
-        if (player.transform.position.x < gameObject.transform.position.x - 5)
+        if (player.transform.position.x < gameObject.transform.position.x - zoom)
         {
-            gameObject.transform.position = new Vector3(x + 5, y, gameObject.transform.position.z);
+            gameObject.transform.position = new Vector3(x + zoom, y, gameObject.transform.position.z);
         }
-
-
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x , y, gameObject.transform.position.z);
+        
         /*
         float x = Mathf.Clamp(player.transform.position.x, minX, maxX);
         float y = Mathf.Clamp(player.transform.position.y, minY, maxY);

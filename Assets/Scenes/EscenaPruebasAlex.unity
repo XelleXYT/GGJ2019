@@ -1474,7 +1474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 151374332, guid: 4f09f6f6db6fbe74d911a5a0bdc6fd78, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -5.41
       objectReference: {fileID: 0}
     - target: {fileID: 151374332, guid: 4f09f6f6db6fbe74d911a5a0bdc6fd78, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1512,10 +1512,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 151374331, guid: 4f09f6f6db6fbe74d911a5a0bdc6fd78, type: 3}
+      propertyPath: orthographic size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 151374328, guid: 4f09f6f6db6fbe74d911a5a0bdc6fd78, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 236483648}
+    - target: {fileID: 151374328, guid: 4f09f6f6db6fbe74d911a5a0bdc6fd78, type: 3}
+      propertyPath: minY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 151374328, guid: 4f09f6f6db6fbe74d911a5a0bdc6fd78, type: 3}
+      propertyPath: maxY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 151374328, guid: 4f09f6f6db6fbe74d911a5a0bdc6fd78, type: 3}
+      propertyPath: zoom
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f09f6f6db6fbe74d911a5a0bdc6fd78, type: 3}
 --- !u!1001 &8170998854523575009
