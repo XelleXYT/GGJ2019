@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class CambiaMusica : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public GameObject soundManager;
+    public AudioClip audioClip;
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if(collision.gameObject.tag == "Player")
+        {
+            soundManager.GetComponent<SoundManager>().musicSource.clip = audioClip;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.tag == "Player")
+        {
+            soundManager.GetComponent<SoundManager>().musicSource.clip = audioClip;
+            soundManager.GetComponent<SoundManager>().musicSource.Play();
+            Destroy(gameObject);
+        }
     }
 }
