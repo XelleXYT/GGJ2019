@@ -13,6 +13,7 @@ TagManager:
   - caja
   - enemigo
   - limitador
+  - musicChange
   layers:
   - Default
   - TransparentFX
