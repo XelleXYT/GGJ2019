@@ -2525,7 +2525,7 @@ GameObject:
   - component: {fileID: 849135478}
   m_Layer: 0
   m_Name: Escenario (1)
-  m_TagString: Untagged
+  m_TagString: suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4396,6 +4396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b1c108fc032004d8aa2379fb1a46e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundManager: {fileID: 1044726019}
 --- !u!1 &1652056021
 GameObject:
   m_ObjectHideFlags: 0
