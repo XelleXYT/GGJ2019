@@ -43,16 +43,8 @@ public class Personaje : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-
-
     {
-        try
-        {
-    
-        }
-        catch{
-
-        }
+       
         if(tiempoSaltoAux != tiempoSalto)
         {
             tiempoSaltoAux += 1;
@@ -101,6 +93,7 @@ public class Personaje : MonoBehaviour
                 rb.AddForce(new Vector2(0,fuerzaSalto*1.5f));
                 agarrado = 0;
                 encajado = false;
+                gameObject.GetComponent<Animator>().SetBool("jumping",true);
             }
         }
         if(Input.GetKey("a") || Input.GetKey("left"))
@@ -182,6 +175,7 @@ public class Personaje : MonoBehaviour
             tiempoSaltoAux = 0;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             rb.AddForce(new Vector2(0,fuerzaSalto));
+            gameObject.GetComponent<Animator>().SetBool("jumping",true);
         }
     }
 
@@ -204,16 +198,19 @@ public class Personaje : MonoBehaviour
         {
             puedeSaltar = true;
             rampa = false;
+            gameObject.GetComponent<Animator>().SetBool("jumping",false);
         }
         if(collision.transform.tag == "caja")
         {
             puedeSaltar = true;
+            gameObject.GetComponent<Animator>().SetBool("jumping",false);
         }
         if(collision.transform.tag == "rampa")
         {
             puedeSaltar = true;
             rampa = true;
             anguloRampa = collision.transform.rotation.z;
+            gameObject.GetComponent<Animator>().SetBool("jumping",false);
         }
         else if(collision.transform.tag == "agarradera")
         {
@@ -223,10 +220,12 @@ public class Personaje : MonoBehaviour
                 agarrado = 1;
             }
             alturaCollider = collision.transform.position.y;
+            gameObject.GetComponent<Animator>().SetBool("jumping",false);
         }
         else if(collision.transform.tag == "plataforma" && collision.transform.position.y + rb.transform.localScale.y < rb.transform.position.y)
         {
             puedeSaltar = true;
+            gameObject.GetComponent<Animator>().SetBool("jumping",false);
         }
     }
 
