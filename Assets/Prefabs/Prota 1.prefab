@@ -113,6 +113,12 @@ MonoBehaviour:
   fuerzaMovimiento: 3800
   fuerzaSalto: 2000
   tiempoSalto: 30
+  moveSound1: {fileID: 0}
+  moveSound2: {fileID: 0}
+  jumpSound1: {fileID: 8300000, guid: e7da100e12267414797af47788a49943, type: 3}
+  jumpSound2: {fileID: 8300000, guid: 634939f9590ad66428046b3e25629473, type: 3}
+  jumpSound3: {fileID: 8300000, guid: 70e15cd6031beeb49b767f94861d931e, type: 3}
+  gameOver: {fileID: 0}
 --- !u!114 &236483656
 MonoBehaviour:
   m_ObjectHideFlags: 0

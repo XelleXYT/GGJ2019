@@ -88,7 +88,7 @@ public class Personaje : MonoBehaviour
                 tiempoSaltando = false;
                 tiempoSaltoAux = 0;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-                rb.AddForce(new Vector2(0,fuerzaSalto * 2));
+                rb.AddForce(new Vector2(0,fuerzaSalto*1.5f));
                 agarrado = 0;
                 encajado = false;
             }
@@ -166,7 +166,7 @@ public class Personaje : MonoBehaviour
         }
         if((Input.GetKey("w") || Input.GetKey("up") || Input.GetKey("space")) && puedeSaltar && tiempoSaltando)
         {
-            SoundManager.instance.RandomizeSfx(jumpSound1,jumpSound2,jumpSound3);
+            //SoundManager.instance.RandomizeSfx(jumpSound1,jumpSound2,jumpSound3);
             puedeSaltar = false;
             tiempoSaltando = false;
             tiempoSaltoAux = 0;
