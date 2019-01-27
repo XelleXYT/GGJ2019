@@ -8,6 +8,15 @@ public class Personaje : MonoBehaviour
     public float fuerzaSalto;
     public int tiempoSalto;
 
+    public AudioClip moveSound1;
+    public AudioClip moveSound2;
+
+    public AudioClip jumpSound1;
+    public AudioClip jumpSound2;
+    public AudioClip jumpSound3;
+
+    public AudioClip gameOver;
+
 
     private int tiempoSaltoAux;
     private int agarrado; // 1 izq   2 der
