@@ -1162,6 +1162,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!82 &381066705 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7669218141792705749, guid: b3915e0584bf00a43ab511e2a7408b54,
+    type: 3}
+  m_PrefabInstance: {fileID: 856079755}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &381066706 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4633668560369436756, guid: b3915e0584bf00a43ab511e2a7408b54,
+    type: 3}
+  m_PrefabInstance: {fileID: 856079755}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &382156513
 GameObject:
   m_ObjectHideFlags: 0
@@ -2193,6 +2205,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.45000094
       objectReference: {fileID: 0}
+    - target: {fileID: 4633668560369436756, guid: b3915e0584bf00a43ab511e2a7408b54,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4c7cb02d3831e5d4cae8f27a966347f1, type: 3}
+    - target: {fileID: 4633668560369436758, guid: b3915e0584bf00a43ab511e2a7408b54,
+        type: 3}
+      propertyPath: musicSource
+      value: 
+      objectReference: {fileID: 381066706}
+    - target: {fileID: 4633668560369436758, guid: b3915e0584bf00a43ab511e2a7408b54,
+        type: 3}
+      propertyPath: efxSource
+      value: 
+      objectReference: {fileID: 381066705}
     - target: {fileID: 4633668560369436759, guid: b3915e0584bf00a43ab511e2a7408b54,
         type: 3}
       propertyPath: m_audioClip
