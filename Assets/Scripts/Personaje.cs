@@ -7,6 +7,7 @@ public class Personaje : MonoBehaviour
     public float fuerzaMovimiento;
     public float fuerzaSalto;
     public int tiempoSalto;
+    public float velocMaxima;
 
     public AudioClip moveSound1;
     public AudioClip moveSound2;
@@ -42,7 +43,16 @@ public class Personaje : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+
+
     {
+        try
+        {
+    
+        }
+        catch{
+
+        }
         if(tiempoSaltoAux != tiempoSalto)
         {
             tiempoSaltoAux += 1;
@@ -173,6 +183,19 @@ public class Personaje : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             rb.AddForce(new Vector2(0,fuerzaSalto));
         }
+    }
+
+    void FixedUpdate()
+    {
+        // -1 to 1 value for horizontal movement
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        // A Vector gives you simply a value x,y,z, ex  1,0,0 for
+        // max right input, 0,1,0 for max up.
+        // Keep the current Y value, which increases 
+        // for each interval because of gravity.
+        var movement = new Vector3(moveHorizontal *
+          velocMaxima,rb.velocity.y,0);
+        rb.velocity = movement;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
