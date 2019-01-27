@@ -246,8 +246,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -655}
-  m_SizeDelta: {x: 558, y: 1124.6}
+  m_AnchoredPosition: {x: 0, y: -1000}
+  m_SizeDelta: {x: 558, y: 1462}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &765521793
 MonoBehaviour:
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 25
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
@@ -282,11 +282,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Credits\n\nProgramation\n\nDaniel Ortiz Vallejo\nAlejandro Lago S\xE1nchez\n\nProduction
-    \n\nPablo Car\xFAs Muro\n\nNarrative Desing\n\nAdrian Herrero Rumayor\n\nArt and
-    game desing\n\nPablo Car\xFAs Muro\nJuan Barreda G\xF3mez\nI\xF1igo Escandon Fernandez-Cid\nAlfonso
-    Torrego Ruano\n\nMusic and audio\n\nI\xF1igo Escand\xF3n Fernandez-Cid\nAlfonso
-    Torrego Ruano\n\n\n\n\n\n\n\n\n\n   \tTHE END"
+  m_Text: "<b>Credits</b>\n\n\n<b>Programation</b>\n\nAlejandro Lago S\xE1nchez\nAlejandro
+    Luna G\xF3mez\nDaniel Ortiz Vallejo\n\n\n<b>Production</b>\n\nPablo Car\xFAs Muro\n\n\n<b>Narrative
+    Desing</b>\n\nAdrian Herrero Rumayor\n\n\n<b>Art</b>\n\nJuan Barreda G\xF3mez\nI\xF1igo
+    Escandon Fernandez-Cid\nAlejandro Lago Sanchez\nDaniel Ortiz Vallejo\n\n\n<b>Game
+    desing</b>\n\nPablo Car\xFAs Muro\nAdrian Herrero Rumayor\nAlejandro Luna G\xF3mez\nDaniel
+    Ortiz Vallejo\n\n\n<b>Music and audio</b>\n\nI\xF1igo Escand\xF3n Fernandez-Cid\nAlfonso
+    Torrego Ruano\n\n\n\n\n\n\n\n\n\n\t  <b>THE END</b>"
 --- !u!222 &765521794
 CanvasRenderer:
   m_ObjectHideFlags: 0

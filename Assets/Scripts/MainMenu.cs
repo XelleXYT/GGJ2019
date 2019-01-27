@@ -9,7 +9,6 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        GetComponent<SoundManager>().PlaySingle(siguienteCancion);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

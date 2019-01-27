@@ -470,6 +470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 375415d48adf60d46b49f5c94f7afe28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  siguienteCancion: {fileID: 0}
 --- !u!1 &647707231
 GameObject:
   m_ObjectHideFlags: 0
