@@ -706,12 +706,12 @@ PrefabInstance:
     - target: {fileID: 9162130322599261937, guid: 54b6130b147191a41aaa4e511f7ca65e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.016
+      value: 3.261
       objectReference: {fileID: 0}
     - target: {fileID: 9162130322599261937, guid: 54b6130b147191a41aaa4e511f7ca65e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.395
+      value: -2.744
       objectReference: {fileID: 0}
     - target: {fileID: 9162130322599261937, guid: 54b6130b147191a41aaa4e511f7ca65e,
         type: 3}
@@ -1007,12 +1007,12 @@ PrefabInstance:
     - target: {fileID: 6876326511962665310, guid: 194b032de85967d4d940ad35f2b036b7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.11
+      value: 0.159
       objectReference: {fileID: 0}
     - target: {fileID: 6876326511962665310, guid: 194b032de85967d4d940ad35f2b036b7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.43
+      value: -3.468
       objectReference: {fileID: 0}
     - target: {fileID: 6876326511962665310, guid: 194b032de85967d4d940ad35f2b036b7,
         type: 3}
@@ -1099,6 +1099,11 @@ PrefabInstance:
         type: 3}
       propertyPath: fuerzaSalto
       value: 1750
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876326511962665304, guid: 194b032de85967d4d940ad35f2b036b7,
+        type: 3}
+      propertyPath: velocMaxima
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 194b032de85967d4d940ad35f2b036b7, type: 3}

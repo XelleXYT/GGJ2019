@@ -12,6 +12,15 @@ public class EnemyMovement : MonoBehaviour
     private void Update()
     {
         gameObject.transform.Translate(new Vector3(velocidad, 0, 0));
+        gameObject.GetComponent<Animator>().SetBool("moving",true);
+        if(velocidad<0)
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
