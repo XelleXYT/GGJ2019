@@ -2781,6 +2781,11 @@ PrefabInstance:
       propertyPath: efxSource
       value: 
       objectReference: {fileID: 381066705}
+    - target: {fileID: 7669218141792705749, guid: b3915e0584bf00a43ab511e2a7408b54,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4633668560369436759, guid: b3915e0584bf00a43ab511e2a7408b54,
         type: 3}
       propertyPath: m_audioClip
